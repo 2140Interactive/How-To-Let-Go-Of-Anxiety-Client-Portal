@@ -54,10 +54,10 @@ export async function POST(request: Request) {
 
     // Send email notification to admin
     await resend.emails.send({
-      from: "Automate What You Can <hello@portal.automatewhatyoucan.com>",
-      to: "automatewhatyoucan@gmail.com",
+      from: "How To Let Go Of Anxiety <hello@portal.howtoletgoofanxiety.com>",
+      to: "lorraine@howtoletgoofanxiety.com",
       subject: `New message from ${clientName} on ${projectName}`,
-      html: `<p><strong>${clientName}</strong> sent a message on the <strong>${projectName}</strong> project:</p><blockquote style="margin: 16px 0; padding-left: 16px; border-left: 3px solid #ddd; color: #666;">${content.trim()}</blockquote><p><a href="${process.env.VERCEL_URL || 'https://portal.automatewhatyoucan.com'}/admin/project/${projectId}?tab=messages">View message</a></p>`,
+      html: `<p><strong>${clientName}</strong> sent a message on the <strong>${projectName}</strong> project:</p><blockquote style="margin: 16px 0; padding-left: 16px; border-left: 3px solid #ddd; color: #666;">${content.trim()}</blockquote><p><a href="${process.env.NEXT_PUBLIC_PORTAL_URL}/admin/project/${projectId}?tab=messages">View message</a></p>`,
     }).catch(err => console.error("Failed to send email notification:", err))
 
     return NextResponse.json({ success: true, message: data })

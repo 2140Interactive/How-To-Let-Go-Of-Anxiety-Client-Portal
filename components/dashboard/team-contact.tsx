@@ -21,7 +21,7 @@ export function TeamContact({ teamMember }: TeamContactProps) {
   return (
     <div className="rounded-xl border border-border bg-card px-4 py-5 shadow-sm md:px-6">
       <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-        Your AWYC Team
+        Your How To Let Go Of Anxiety Team
       </h2>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         {/* Avatar + Info */}

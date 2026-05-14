@@ -102,6 +102,6 @@ export async function GET(request: NextRequest) {
   // No matching client or admin -- sign them out and redirect with error
   await supabase.auth.signOut()
   return NextResponse.redirect(
-    `${origin}/login?error=${encodeURIComponent("No account found for this email. Please contact your AWYC team member.")}`
+    `${origin}/login?error=${encodeURIComponent("No account found for this email. Please contact your How To Let Go Of Anxiety team member.")}`
   )
 }

@@ -6,7 +6,7 @@ import { ClientAvatarUpload } from "@/components/client/avatar-upload"
 import { ClientProfileEditor } from "@/components/client/profile-editor"
 
 export const metadata: Metadata = {
-  title: "Your Profile | AWYC",
+  title: "Your Profile | HTLGOA",
   description: "Your profile information",
 }
 
@@ -71,7 +71,7 @@ export default async function ClientSettingsPage() {
 
           <div className="mt-2 rounded-lg bg-muted/50 px-4 py-3">
             <p className="text-sm text-muted-foreground">
-              Contact your AWYC team to update your email or company information.
+              Contact your How To Let Go Of Anxiety team to update your email or company information.
             </p>
           </div>
         </div>

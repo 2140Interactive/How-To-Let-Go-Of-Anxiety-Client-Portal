@@ -121,7 +121,7 @@ export function FilesTab({ files, milestones, projectId }: FilesTabProps) {
       {/* Deliverables */}
       <div>
         <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-          Deliverables from AWYC
+          Deliverables from How To Let Go Of Anxiety
         </h3>
         <div className="rounded-xl border border-border bg-card shadow-sm">
           {deliverables.length === 0 ? (

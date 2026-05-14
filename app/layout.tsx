@@ -10,7 +10,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "AWYC Client Portal",
+  title: "HTLGOA Client Portal",
   description:
     "Your project status portal. Check milestones, respond to requests, and stay up to date.",
 }

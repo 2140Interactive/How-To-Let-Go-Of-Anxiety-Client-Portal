@@ -5,7 +5,7 @@ ALTER TABLE payments ENABLE ROW LEVEL SECURITY;
 DROP POLICY IF EXISTS "payments_admin" ON payments;
 CREATE POLICY "payments_admin" ON payments
   FOR SELECT
-  USING (auth.email() = 'automatewhatyoucan@gmail.com');
+  USING (auth.email() = 'lorraine@howtoletgoofanxiety.com');
 
 -- Client policy: Allow clients to see only payments from their own projects
 DROP POLICY IF EXISTS "payments_own" ON payments;

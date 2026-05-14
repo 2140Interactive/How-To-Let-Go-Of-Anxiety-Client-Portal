@@ -4,7 +4,7 @@ import { createServiceClient } from "@/lib/supabase/service"
 import { adminSideEffects, getAdminName } from "@/lib/admin-api-helpers"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
-const FROM_EMAIL = "hello@portal.automatewhatyoucan.com"
+const FROM_EMAIL = "hello@portal.howtoletgoofanxiety.com"
 
 export async function POST(request: Request) {
   // Get authenticated user
@@ -93,7 +93,7 @@ export async function POST(request: Request) {
 
     try {
       await resend.emails.send({
-        from: `AWYC Portal <${FROM_EMAIL}>`,
+        from: `How To Let Go Of Anxiety <${FROM_EMAIL}>`,
         to: client.email,
         subject: `New Task: ${title}`,
         html: getTaskCreatedEmailTemplate({
@@ -101,7 +101,7 @@ export async function POST(request: Request) {
           projectName: project.name,
           taskName: title,
           description,
-          portalUrl: "https://portal.automatewhatyoucan.com/login",
+          portalUrl: `${process.env.NEXT_PUBLIC_PORTAL_URL}/login`,
         }),
       })
     } catch (emailError) {
@@ -155,7 +155,7 @@ function getTaskCreatedEmailTemplate({
     <p style="margin: 0 0 8px;">Thank you.</p>
 
     <p style="margin: 0; color: #5095A3; font-weight: bold;">Andreas</p>
-    <p style="margin: 4px 0 0; color: #888888; font-size: 14px;">Automate What You Can</p>
+    <p style="margin: 4px 0 0; color: #888888; font-size: 14px;">How To Let Go Of Anxiety</p>
 
   </div>
 

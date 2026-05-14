@@ -4,7 +4,7 @@ import { AvatarUpload } from "@/components/admin/avatar-upload"
 import { ProfileEditor } from "@/components/admin/profile-editor"
 
 export const metadata: Metadata = {
-  title: "Account Settings | AWYC Admin",
+  title: "Account Settings | HTLGOA Admin",
   description: "Admin account settings",
 }
 

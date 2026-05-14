@@ -9,7 +9,7 @@ interface InvitationCardProps {
 }
 
 // Calendly URL for scheduling automation discovery calls
-const CALENDLY_URL = "https://calendly.com/automatewhatyoucan/15-minute-call"
+const CALENDLY_URL = "#"
 
 export function InvitationCard({ schedulingUrl }: InvitationCardProps) {
   const [showCalendly, setShowCalendly] = useState(false)
@@ -29,7 +29,7 @@ export function InvitationCard({ schedulingUrl }: InvitationCardProps) {
           onClick={() => setShowCalendly(true)}
           className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[#5095A3] transition-colors hover:text-[#5095A3]/80"
         >
-          Show Me What's Possible
+          Schedule a Call (coming soon)
           <ArrowRight className="h-4 w-4" />
         </button>
       </div>

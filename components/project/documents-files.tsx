@@ -148,7 +148,7 @@ export function DocumentsFiles({ files, clientId }: DocumentsFilesProps) {
       </h2>
       <div className="flex flex-col gap-5">
         {deliverables.length > 0 && (
-          <FileCategory title="Deliverables from AWYC" files={deliverables} />
+          <FileCategory title="Deliverables from How To Let Go Of Anxiety" files={deliverables} />
         )}
         {uploaded.length > 0 && (
           <FileCategory title="Files You Uploaded" files={uploaded} />

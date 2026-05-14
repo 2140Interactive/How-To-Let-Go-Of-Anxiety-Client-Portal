@@ -56,8 +56,8 @@ function LoginForm() {
         <div className="mb-8 flex justify-center">
           <div className="relative flex h-20 w-full items-center rounded-xl bg-[var(--awyc-primary)] px-6 py-3">
             <Image
-              src="/images/awyc_logo_transparent.png"
-              alt="Automate What You Can"
+              src="/images/How_to_Let_Go_of_Anxiety_Logo.png"
+              alt="How To Let Go Of Anxiety"
               fill
               className="object-contain p-3"
               sizes="384px"

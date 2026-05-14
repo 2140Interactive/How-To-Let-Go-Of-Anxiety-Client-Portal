@@ -11,7 +11,7 @@ import { PaymentBanner } from "@/components/dashboard/payment-banner"
 import { DashboardContentWrapper } from "@/components/dashboard/dashboard-content-wrapper"
 
 export const metadata = {
-  title: "Dashboard - AWYC Client Portal",
+  title: "Dashboard - HTLGOA Client Portal",
   description: "View your active projects and pending tasks",
 }
 

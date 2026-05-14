@@ -42,7 +42,7 @@ export default async function AuthenticatedLayout({
   } else {
     // Not a client and not admin -- sign them out to prevent redirect loop
     await supabase.auth.signOut()
-    redirect("/login?error=No client account found for this email. Please contact your AWYC team member.")
+    redirect("/login?error=No client account found for this email. Please contact your How To Let Go Of Anxiety team member.")
   }
 
   // Check if client has any monitoring projects

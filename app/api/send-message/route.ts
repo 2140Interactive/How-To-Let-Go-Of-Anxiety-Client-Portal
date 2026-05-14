@@ -5,7 +5,7 @@ import { getClientByAuthId } from "@/lib/data/dashboard"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-const FROM_EMAIL = "hello@portal.automatewhatyoucan.com"
+const FROM_EMAIL = "hello@portal.howtoletgoofanxiety.com"
 
 export async function POST(request: Request) {
   try {
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
 
     // 1. Send notification to admin
     await resend.emails.send({
-      from: `AWYC Portal <${FROM_EMAIL}>`,
+      from: `How To Let Go Of Anxiety <${FROM_EMAIL}>`,
       to: adminEmail,
       subject: `New message from ${clientName}`,
       text: [
@@ -54,19 +54,19 @@ export async function POST(request: Request) {
         "",
         "---",
         "",
-        "This message was sent via the AWYC Client Portal.",
+        "This message was sent via the How To Let Go Of Anxiety Client Portal.",
       ].join("\n"),
     })
 
     // 2. Send confirmation copy to client
     await resend.emails.send({
-      from: `AWYC Portal <${FROM_EMAIL}>`,
+      from: `How To Let Go Of Anxiety <${FROM_EMAIL}>`,
       to: clientEmail,
-      subject: "Your message to AWYC has been sent",
+      subject: "Your message to How To Let Go Of Anxiety has been sent",
       text: [
         `Hi ${clientName.split(" ")[0]},`,
         "",
-        "Your message has been sent to the AWYC team. Here is a copy for your records:",
+        "Your message has been sent to the How To Let Go Of Anxiety team. Here is a copy for your records:",
         "",
         "---",
         "",
@@ -78,7 +78,7 @@ export async function POST(request: Request) {
         "",
         "We will get back to you shortly.",
         "",
-        "- The AWYC Team",
+        "- The How To Let Go Of Anxiety Team",
       ].join("\n"),
     })
 

@@ -35,8 +35,8 @@ export function TopNav({
         {/* Logo */}
         <Link href="/dashboard" className="relative flex h-16 w-[280px] shrink-0 items-center">
           <Image
-            src="/images/awyc_logo_transparent.png"
-            alt="Automate What You Can"
+            src="/images/How_to_Let_Go_of_Anxiety_Logo.png"
+            alt="How To Let Go Of Anxiety"
             fill
             className="object-contain object-left"
             sizes="280px"

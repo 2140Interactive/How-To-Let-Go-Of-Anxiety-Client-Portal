@@ -20,7 +20,7 @@ interface TeamSidebarProps {
   projectName: string
 }
 
-const CALENDLY_URL = "https://calendly.com/automatewhatyoucan/15-minute-call"
+const CALENDLY_URL = "#"
 
 export function TeamSidebar({ teamMembers, projectName }: TeamSidebarProps) {
   const primary = teamMembers.find((m) => m.is_primary) || teamMembers[0]
@@ -32,7 +32,7 @@ export function TeamSidebar({ teamMembers, projectName }: TeamSidebarProps) {
     <>
       <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
         <h2 className="mb-5 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-          Your AWYC Team
+          Your How To Let Go Of Anxiety Team
         </h2>
 
         <div className="flex flex-col items-center gap-3 text-center">
@@ -60,7 +60,7 @@ export function TeamSidebar({ teamMembers, projectName }: TeamSidebarProps) {
             className="flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-border bg-card px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
           >
             <Calendar className="h-4 w-4" />
-            Schedule 15-Min Call
+            Schedule a Call (coming soon)
           </button>
           <button
             type="button"

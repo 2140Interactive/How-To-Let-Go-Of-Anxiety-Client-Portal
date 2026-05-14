@@ -9,7 +9,7 @@ import { NewClientProjectButton } from "@/components/admin/new-client-project-mo
 import { formatCurrency } from "@/lib/utils/format"
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard | AWYC",
+  title: "Admin Dashboard | HTLGOA",
   description: "Overview of all clients, projects, and activity.",
 }
 

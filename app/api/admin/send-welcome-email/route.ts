@@ -2,7 +2,7 @@ import { Resend } from "resend"
 import { createServiceClient } from "@/lib/supabase/service"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
-const FROM_EMAIL = "hello@portal.automatewhatyoucan.com"
+const FROM_EMAIL = "hello@portal.howtoletgoofanxiety.com"
 
 export async function POST(request: Request) {
   try {
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     // Determine which template to use based on whether this is first send or resend
     const isFirstSend = !project.welcome_email_sent_at
     const emailSubject = isFirstSend
-      ? "Welcome to Automate What You Can"
+      ? "Welcome to How To Let Go Of Anxiety"
       : `New Project: ${project.name}`
 
     // HTML email content based on template type
@@ -49,7 +49,7 @@ export async function POST(request: Request) {
 
     // Send email via Resend
     await resend.emails.send({
-      from: `AWYC Portal <${FROM_EMAIL}>`,
+      from: `How To Let Go Of Anxiety <${FROM_EMAIL}>`,
       to: client.email,
       subject: emailSubject,
       html: emailHtml,
@@ -100,7 +100,7 @@ function getNewClientWelcomeTemplate(
     <p style="margin: 0 0 16px;">We're excited to kick off your ${projectName} project. Your dedicated portal is now ready, and you can start collaborating with our team right away.</p>
 
     <p style="margin: 0 0 28px;">
-      <a href="https://portal.automatewhatyoucan.com/login" style="background-color: #5095A3; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 15px; display: inline-block;">Access Your Portal</a>
+      <a href="${process.env.NEXT_PUBLIC_PORTAL_URL}/login" style="background-color: #5095A3; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 15px; display: inline-block;">Access Your Portal</a>
     </p>
 
     <p style="margin: 0 0 16px;"><strong>What's Next:</strong></p>
@@ -114,7 +114,7 @@ function getNewClientWelcomeTemplate(
     <p style="margin: 0 0 8px;">Thank you for partnering with us.</p>
 
     <p style="margin: 0; color: #5095A3; font-weight: bold;">Andreas</p>
-    <p style="margin: 4px 0 0; color: #888888; font-size: 14px;">Automate What You Can</p>
+    <p style="margin: 4px 0 0; color: #888888; font-size: 14px;">How To Let Go Of Anxiety</p>
 
   </div>
 
@@ -145,13 +145,13 @@ function getExistingClientProjectTemplate(
     <p style="margin: 0 0 16px;">A new project has been added to your account. Your ${projectName} project is now ready to access through your portal.</p>
 
     <p style="margin: 0 0 28px;">
-      <a href="https://portal.automatewhatyoucan.com/login" style="background-color: #5095A3; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 15px; display: inline-block;">View Project</a>
+      <a href="${process.env.NEXT_PUBLIC_PORTAL_URL}/login" style="background-color: #5095A3; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 15px; display: inline-block;">View Project</a>
     </p>
 
     <p style="margin: 0 0 8px;">Thank you for your business.</p>
 
     <p style="margin: 0; color: #5095A3; font-weight: bold;">Andreas</p>
-    <p style="margin: 4px 0 0; color: #888888; font-size: 14px;">Automate What You Can</p>
+    <p style="margin: 4px 0 0; color: #888888; font-size: 14px;">How To Let Go Of Anxiety</p>
 
   </div>
 

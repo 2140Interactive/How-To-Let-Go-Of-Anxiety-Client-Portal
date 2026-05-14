@@ -5,7 +5,7 @@ import { formatStatus } from "@/lib/utils/format"
 import { Resend } from "resend"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
-const FROM_EMAIL = "hello@portal.automatewhatyoucan.com"
+const FROM_EMAIL = "hello@portal.howtoletgoofanxiety.com"
 
 export async function PATCH(request: Request) {
   // Get authenticated user
@@ -155,7 +155,7 @@ export async function PATCH(request: Request) {
     if (clientRecord?.email && project?.welcome_email_sent_at) {
       try {
         await resend.emails.send({
-          from: `Automate What You Can <${FROM_EMAIL}>`,
+          from: `How To Let Go Of Anxiety <${FROM_EMAIL}>`,
           to: clientRecord.email,
           subject: `Project Update: ${data.name} ${statusLabel}`,
           html: `
@@ -175,11 +175,11 @@ export async function PATCH(request: Request) {
       <p style="margin: 0;"><strong>Status:</strong> ${statusLabel.charAt(0).toUpperCase() + statusLabel.slice(1)}</p>
     </div>
     <p style="margin: 0 0 28px;">
-      <a href="https://portal.automatewhatyoucan.com/project/${projectId}" style="background-color: #5095A3; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 15px; display: inline-block;">View Project</a>
+      <a href="${process.env.NEXT_PUBLIC_PORTAL_URL}/project/${projectId}" style="background-color: #5095A3; color: #ffffff; padding: 14px 28px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 15px; display: inline-block;">View Project</a>
     </p>
     <p style="margin: 0 0 8px;">Thank you.</p>
     <p style="margin: 0; color: #5095A3; font-weight: bold;">Andreas</p>
-    <p style="margin: 4px 0 0; color: #888888; font-size: 14px;">Automate What You Can</p>
+    <p style="margin: 4px 0 0; color: #888888; font-size: 14px;">How To Let Go Of Anxiety</p>
   </div>
 </body>
 </html>

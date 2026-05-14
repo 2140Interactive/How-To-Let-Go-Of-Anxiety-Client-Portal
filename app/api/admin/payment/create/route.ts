@@ -95,7 +95,7 @@ export async function POST(request: Request) {
 
           try {
             await resend.emails.send({
-              from: "Automate What You Can <hello@portal.automatewhatyoucan.com>",
+              from: "How To Let Go Of Anxiety <hello@portal.howtoletgoofanxiety.com>",
               to: client.email,
               subject: `Payment Due: ${formattedAmount} - ${description || "Invoice"}`,
               html: getPaymentDueEmailTemplate({
@@ -103,7 +103,7 @@ export async function POST(request: Request) {
                 amount: formattedAmount,
                 description: description || "Project payment",
                 dueDate: formattedDueDate,
-                portalUrl: "https://portal.automatewhatyoucan.com/login",
+                portalUrl: `${process.env.NEXT_PUBLIC_PORTAL_URL}/login`,
               }),
             })
             console.log("[v0] Payment due email sent to:", client.email)
@@ -191,7 +191,7 @@ function getPaymentDueEmailTemplate({
     <p style="margin: 0 0 8px;">Thank you for your business.</p>
 
     <p style="margin: 0; color: #5095A3; font-weight: bold;">Andreas</p>
-    <p style="margin: 4px 0 0; color: #888888; font-size: 14px;">Automate What You Can</p>
+    <p style="margin: 4px 0 0; color: #888888; font-size: 14px;">How To Let Go Of Anxiety</p>
 
   </div>
 

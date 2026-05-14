@@ -21,7 +21,7 @@ export function AdminTopNav({
           {/* Logo */}
           <Link href="/admin" className="relative flex h-16 w-[280px] shrink-0 items-center">
             <Image
-              src="/images/How_to_Let_Go_of_Anxiety_Logo.png"
+              src="/images/How_to_Let_Go_of_Anxiety_Logo_white.png"
               alt="How To Let Go Of Anxiety"
               fill
               className="object-contain object-left"

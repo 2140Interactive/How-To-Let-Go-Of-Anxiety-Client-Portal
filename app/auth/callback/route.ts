@@ -1,6 +1,7 @@
 import { createServerClient } from "@supabase/ssr"
 import { type NextRequest, NextResponse } from "next/server"
 import { createServiceClient } from "@/lib/supabase/service"
+import { isAdmin } from "@/lib/auth/admin"
 
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
@@ -72,9 +73,8 @@ export async function GET(request: NextRequest) {
 
   const userEmail = user.email?.toLowerCase()
 
-  // Check if this is the admin
-  const adminEmail = process.env.ADMIN_EMAIL?.toLowerCase()
-  if (adminEmail && userEmail === adminEmail) {
+  // Check if this is an admin (supports multiple admins via comma-separated ADMIN_EMAIL)
+  if (isAdmin(user.email)) {
     return redirectWithCookies(`${origin}/admin`)
   }
 

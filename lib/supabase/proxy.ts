@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr"
 import { type NextRequest, NextResponse } from "next/server"
+import { isAdmin } from "@/lib/auth/admin"
 
 // Public routes that don't require authentication
 const PUBLIC_ROUTES = ["/login", "/auth/callback", "/api/webhooks/stripe"]
@@ -48,8 +49,7 @@ export async function updateSession(request: NextRequest) {
   if (isPublicRoute) {
     // If user is already logged in and visits /login, redirect them
     if (user && pathname === "/login") {
-      const adminEmail = process.env.ADMIN_EMAIL?.toLowerCase()
-      if (adminEmail && user.email?.toLowerCase() === adminEmail) {
+      if (isAdmin(user.email)) {
         const url = request.nextUrl.clone()
         url.pathname = "/admin"
         return NextResponse.redirect(url)
@@ -81,9 +81,7 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  const userEmail = user.email?.toLowerCase()
-  const adminEmail = process.env.ADMIN_EMAIL?.toLowerCase()
-  const isAdminUser = adminEmail && userEmail === adminEmail
+  const isAdminUser = isAdmin(user.email)
 
   // Admin route protection: only admin email can access /admin/*
   if (pathname.startsWith("/admin")) {

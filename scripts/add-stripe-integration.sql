@@ -15,7 +15,7 @@ ALTER TABLE stripe_customers ENABLE ROW LEVEL SECURITY;
 -- Create RLS policies
 CREATE POLICY "stripe_customers_admin" ON stripe_customers
   FOR SELECT
-  USING (auth.email() = 'lorraine@howtoletgoofanxiety.com');
+  USING (auth.email() IN ('lorraine@howtoletgoofanxiety.com', 'gregmarcel@icloud.com'));
 
 CREATE POLICY "stripe_customers_own" ON stripe_customers
   FOR SELECT
